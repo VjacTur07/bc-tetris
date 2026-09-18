@@ -256,8 +256,13 @@ class Tetris {
   }
 
   hardDrop() {
+    let droppedcells = 0;
     while (this.movePiece(0, 1)) {
-      this.score += 2;
+      droppedcells++;
+    }
+    if (droppedcells > 0) {
+      this.score += droppedcells * 2;
+      this.updateDisplay();
     }
   }
 
