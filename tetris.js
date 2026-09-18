@@ -313,12 +313,12 @@ class Tetris {
     }
 
     if (linesCleared > 0) {
-      this.lines += linesCleared;
-      this.level = Math.floor(this.lines / 10) + 1;
-
       // Scoring: more points for clearing multiple lines at once
       const lineScores = [0, 100, 300, 500, 800];
       this.score += lineScores[linesCleared] * this.level;
+
+      this.lines += linesCleared;
+      this.level = Math.floor(this.lines / 10) + 1;
 
       this.updateDisplay();
     }
