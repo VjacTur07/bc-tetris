@@ -203,7 +203,7 @@ export class Tetris {
   }
 
   getDropSpeed() {
-    return Math.max(50, 1000 - (this.level - 1) * 100);
+    return Math.max(50, 500 - (this.level - 1) * 100);
   }
 
   update() {
