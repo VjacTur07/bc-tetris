@@ -1,4 +1,4 @@
-class Tetris {
+export class Tetris {
   constructor() {
     this.canvas = document.getElementById("gameCanvas");
     this.ctx = this.canvas.getContext("2d");
@@ -458,8 +458,3 @@ class Tetris {
     document.getElementById("highScore").textContent = this.highScore;
   }
 }
-
-// Initialize the game when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  new Tetris();
-});
