@@ -22,7 +22,7 @@ export class Tetris {
     this.gameOver = false;
 
     // Session storage for high score
-    this.highScore = parseInt(sessionStorage.getItem("tetrisHighScore")) || 0;
+    this.highScore = parseInt(localStorage.getItem("tetrisHighScore")) || 0;
 
     // Initialize
     this.initBoard();
@@ -353,7 +353,7 @@ export class Tetris {
     // Update high score
     if (this.score > this.highScore) {
       this.highScore = this.score;
-      sessionStorage.setItem("tetrisHighScore", this.highScore.toString());
+      localStorage.setItem("tetrisHighScore", this.highScore.toString());
     }
 
     document.getElementById("startBtn").disabled = false;
@@ -458,3 +458,7 @@ export class Tetris {
     document.getElementById("highScore").textContent = this.highScore;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  new Tetris();
+});
